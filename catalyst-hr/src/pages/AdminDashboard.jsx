@@ -364,10 +364,11 @@ function AppTable({ apps, onUpdate, onView }) {
 
 /* ─── JobFormModal ───────────────────────────────────────────── */
 function JobFormModal({ open, onClose, job, onSave }) {
-  const blank = { title: "", dept: "", loc: "", exp: "", type: "Full-time", mode: "WFO", interview: "Virtual", salary: "", desc: "", urgent: false, cert: false, status: "Active" };
-  const [f, setF] = useState(blank);
+  const [f, setF] = useState({ title: "", dept: "", loc: "", exp: "", type: "Full-time", mode: "WFO", interview: "Virtual", salary: "", desc: "", urgent: false, cert: false, status: "Active" });
 
-  useEffect(() => { setF(job ? { ...job } : blank); }, [job, open, blank]);
+  useEffect(() => { 
+    setF(job ? { ...job } : { title: "", dept: "", loc: "", exp: "", type: "Full-time", mode: "WFO", interview: "Virtual", salary: "", desc: "", urgent: false, cert: false, status: "Active" }); 
+  }, [job, open]);
 
   const set = (k, v) => setF(x => ({ ...x, [k]: v }));
 

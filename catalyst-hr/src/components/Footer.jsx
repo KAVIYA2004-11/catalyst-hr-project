@@ -79,7 +79,7 @@ export default function Footer({ nav, onAdminAccess }) {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,.07)", paddingTop: 18, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
-          <div style={{ color: "rgba(255,255,255,.25)", fontSize: 12, cursor: "default", userSelect: "none" }}>
+          <div onClick={handleSecretClick} style={{ color: "rgba(255,255,255,.25)", fontSize: 12, cursor: "default", userSelect: "none" }}>
             © {new Date().getFullYear()} Catalyst HR Solutions. All rights reserved.
           </div>
           <div style={{ color: "rgba(255,255,255,.25)", fontSize: 12 }}>Bridging Talent. Building Futures.</div>
