@@ -1,72 +1,41 @@
+import LOGO_SRC from "../assets/logo";
+
 /* ─── CatalystLogo ──────────────────────────────────────────── */
-/* Icon-only logo rebuilt to exactly match the provided image */
+/* Icon-only logo (using the provided full picture) */
 export function CatalystLogo({ size = 44, white = false }) {
-  const color = white ? "#ffffff" : "#1A7B72"; // Exact matched teal color
-  
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0, display: "block" }}>
-      <g stroke={color} strokeWidth="3.5" strokeLinecap="butt" strokeLinejoin="miter">
-        {/* Outer Hex C */}
-        <polyline points="74,22 50,10 16,27 16,73 50,90 74,78" />
-        
-        {/* Middle Line connecting exactly to the solid blocks */}
-        <polyline points="44,26.5 27,35 27,65 44,73.5" />
-        
-        {/* Inner C */}
-        <polyline points="62,43 50,37 38,43 38,57 50,63 62,57" />
-      </g>
-      
-      {/* Top Thick Solid Parallelogram */}
-      <polygon points="44,14 74,29 74,42 44,27" fill={color} />
-      
-      {/* Bottom Thick Solid Parallelogram */}
-      <polygon points="44,86 74,71 74,58 44,73" fill={color} />
-    </svg>
+    <img
+      src={LOGO_SRC}
+      alt="Catalyst HR Solutions"
+      style={{
+        height: size,
+        width: "auto",
+        objectFit: "contain",
+        flexShrink: 0,
+        display: "block",
+        filter: white ? "brightness(0) invert(1)" : "none"
+      }}
+    />
   );
 }
 
 /* ─── LogoFull ──────────────────────────────────────────────── */
-/* Full logo (icon + matching typography) */
+/* Full logo (replacing SVG and text entirely with the picture) */
 export function LogoFull({ size = 40, white = false, vertical = true }) {
-  const color = white ? "#ffffff" : "#1A7B72";
-
+  // Since the picture already includes the text vertically, we just render the image,
+  // scaling it slightly larger so the text is legible.
   return (
-    <div style={{ 
-      display: "flex", 
-      alignItems: "center", 
-      flexDirection: vertical ? "column" : "row",
-      gap: vertical ? "4px" : "14px", 
-      flexShrink: 0 
-    }}>
-      <CatalystLogo size={size * 1.15} white={white} />
-      <div style={{ 
-        display: "flex", 
-        flexDirection: "column", 
-        justifyContent: "center",
-        alignItems: vertical ? "center" : "flex-start"
-      }}>
-        <span style={{ 
-          fontWeight: 600, 
-          fontSize: size * 0.52, 
-          color: color,
-          fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
-          letterSpacing: "1px",
-          lineHeight: 1
-        }}>
-          CATALYST
-        </span>
-        <span style={{ 
-          fontWeight: 600, 
-          fontSize: size * 0.28, 
-          color: color,
-          fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
-          letterSpacing: "0.5px",
-          lineHeight: 1.1,
-          marginTop: vertical ? 4 : 2
-        }}>
-          HR SOLUTIONS
-        </span>
-      </div>
-    </div>
+    <img
+      src={LOGO_SRC}
+      alt="Catalyst HR Solutions"
+      style={{
+        height: size * 1.5,
+        width: "auto",
+        objectFit: "contain",
+        flexShrink: 0,
+        display: "block",
+        filter: white ? "brightness(0) invert(1)" : "none"
+      }}
+    />
   );
 }
