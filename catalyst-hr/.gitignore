@@ -3,13 +3,13 @@ node_modules/
 
 # build
 dist/
-build/
+# build/
 
 # environment variables
 .env
 
 # ignore backend server
-server/
+# server/
 
 # cache
 .cache/
