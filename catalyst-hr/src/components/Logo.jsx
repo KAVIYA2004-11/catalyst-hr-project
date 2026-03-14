@@ -27,13 +27,24 @@ export function CatalystLogo({ size = 44, white = false }) {
 
 /* ─── LogoFull ──────────────────────────────────────────────── */
 /* Full logo (icon + matching typography) */
-export function LogoFull({ size = 40, white = false }) {
+export function LogoFull({ size = 40, white = false, vertical = true }) {
   const color = white ? "#ffffff" : "#1A7B72";
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "14px", flexShrink: 0 }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      flexDirection: vertical ? "column" : "row",
+      gap: vertical ? "4px" : "14px", 
+      flexShrink: 0 
+    }}>
       <CatalystLogo size={size * 1.15} white={white} />
-      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      <div style={{ 
+        display: "flex", 
+        flexDirection: "column", 
+        justifyContent: "center",
+        alignItems: vertical ? "center" : "flex-start"
+      }}>
         <span style={{ 
           fontWeight: 600, 
           fontSize: size * 0.65, 
@@ -46,12 +57,12 @@ export function LogoFull({ size = 40, white = false }) {
         </span>
         <span style={{ 
           fontWeight: 600, 
-          fontSize: size * 0.38, 
+          fontSize: size * 0.36, 
           color: color,
           fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
           letterSpacing: "0.5px",
           lineHeight: 1.1,
-          marginTop: 2
+          marginTop: vertical ? 4 : 2
         }}>
           HR SOLUTIONS
         </span>
