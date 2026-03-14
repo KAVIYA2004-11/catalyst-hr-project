@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { T } from "../data/config";
 import { Btn, Card, Tag } from "../components/UI";
 

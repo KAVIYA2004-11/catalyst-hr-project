@@ -19,7 +19,6 @@ export default function Footer({ nav, onAdminAccess }) {
     setSecretCount(next);
     if (next >= 5) { setSecretCount(0); onAdminAccess(); }
   };
-
   const linkStyle = {
     display:    "block",
     background: "none",

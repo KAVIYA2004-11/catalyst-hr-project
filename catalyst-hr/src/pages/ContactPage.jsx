@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { T, PHOTOS } from "../data/config";
-import { Btn, Card, Tag, Field } from "../components/UI";
+import { Btn, Card, Field } from "../components/UI";
 
 const CONTACT_INFO = [
   { i: "📞", l: "Phone / WhatsApp", items: ["+91 91761 04109", "+91 89395 42187", "+91 79048 47280"] },

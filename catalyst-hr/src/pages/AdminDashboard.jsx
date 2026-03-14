@@ -14,7 +14,6 @@ export default function AdminDashboard({ jobs, apps, users, onUpdateStatus, onUp
   /* ─── Dynamic Calculations ─── */
   const totalJobs   = jobs.length;
   const totalApps   = apps.length;
-  const totalUsers  = users.length;
   const activeUsers = users.filter(u => u.role === "user" && u.status === "Approved").length;
   const recruiters  = users.filter(u => u.role === "recruiter").length;
   const pending     = users.filter(u => u.status === "Pending").length;
@@ -368,7 +367,7 @@ function JobFormModal({ open, onClose, job, onSave }) {
   const blank = { title: "", dept: "", loc: "", exp: "", type: "Full-time", mode: "WFO", interview: "Virtual", salary: "", desc: "", urgent: false, cert: false, status: "Active" };
   const [f, setF] = useState(blank);
 
-  useEffect(() => { setF(job ? { ...job } : blank); }, [job, open]);
+  useEffect(() => { setF(job ? { ...job } : blank); }, [job, open, blank]);
 
   const set = (k, v) => setF(x => ({ ...x, [k]: v }));
 

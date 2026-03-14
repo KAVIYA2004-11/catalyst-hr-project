@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { T, FIREBASE_CONFIG, PHOTOS } from "../data/config";
+import { T, PHOTOS } from "../data/config";
 import { initFB } from "../utils/firebase";
 import { LogoFull } from "../components/Logo";
 import { Btn, Field, Spin } from "../components/UI";
